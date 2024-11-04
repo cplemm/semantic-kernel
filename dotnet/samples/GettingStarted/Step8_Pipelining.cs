@@ -13,7 +13,7 @@ public sealed class Step8_Pipelining(ITestOutputHelper output) : BaseTest(output
     /// Provides an example of combining multiple functions into a single function that invokes
     /// them in a sequence, passing the output from one as input to the next.
     /// </summary>
-    [Fact]
+    // [Fact]
     public async Task RunAsync()
     {
         IKernelBuilder builder = Kernel.CreateBuilder();

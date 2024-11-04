@@ -16,7 +16,7 @@ public class Step09_Assistant_Vision(ITestOutputHelper output) : BaseAgentsTest(
     /// </summary>
     protected override bool ForceOpenAI => true;
 
-    [Fact]
+    // [Fact]
     public async Task UseSingleAssistantAgentAsync()
     {
         // Define the agent

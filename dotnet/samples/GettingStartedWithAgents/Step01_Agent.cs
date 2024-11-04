@@ -12,13 +12,14 @@ namespace GettingStarted;
 /// </summary>
 public class Step01_Agent(ITestOutputHelper output) : BaseAgentsTest(output)
 {
+    protected override bool ForceOpenAI => false;
     private const string ParrotName = "Parrot";
     private const string ParrotInstructions = "Repeat the user message in the voice of a pirate and then end with a parrot sound.";
 
     [Fact]
     public async Task UseSingleChatCompletionAgentAsync()
     {
-        Kernel kernel = this.CreateKernelWithChatCompletion();
+        // Kernel kernel = this.CreateKernelWithChatCompletion();
 
         // Define the agent
         ChatCompletionAgent agent =

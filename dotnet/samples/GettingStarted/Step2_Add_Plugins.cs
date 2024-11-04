@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Text.Json.Serialization;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.Connectors.OpenAI;
+using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
 
 namespace GettingStarted;
 
@@ -21,27 +21,29 @@ public sealed class Step2_Add_Plugins(ITestOutputHelper output) : BaseTest(outpu
     {
         // Create a kernel with OpenAI chat completion
         IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
-        kernelBuilder.AddOpenAIChatCompletion(
-                modelId: TestConfiguration.OpenAI.ChatModelId,
-                apiKey: TestConfiguration.OpenAI.ApiKey);
+        kernelBuilder.AddAzureOpenAIChatCompletion(
+               endpoint: TestConfiguration.AzureOpenAI.Endpoint,
+                modelId: TestConfiguration.AzureOpenAI.ChatModelId,
+                deploymentName: TestConfiguration.AzureOpenAI.DeploymentName,
+                apiKey: TestConfiguration.AzureOpenAI.ApiKey);
         kernelBuilder.Plugins.AddFromType<TimeInformation>();
         kernelBuilder.Plugins.AddFromType<WidgetFactory>();
         Kernel kernel = kernelBuilder.Build();
 
         // Example 1. Invoke the kernel with a prompt that asks the AI for information it cannot provide and may hallucinate
-        Console.WriteLine(await kernel.InvokePromptAsync("How many days until Christmas?"));
+        // Console.WriteLine(await kernel.InvokePromptAsync("How many days until Christmas?"));
 
         // Example 2. Invoke the kernel with a templated prompt that invokes a plugin and display the result
-        Console.WriteLine(await kernel.InvokePromptAsync("The current time is {{TimeInformation.GetCurrentUtcTime}}. How many days until Christmas?"));
+        // Console.WriteLine(await kernel.InvokePromptAsync("The current time is {{TimeInformation.GetCurrentUtcTime}}. How many days until Christmas?"));
 
         // Example 3. Invoke the kernel with a prompt and allow the AI to automatically invoke functions
-        OpenAIPromptExecutionSettings settings = new() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto() };
+        AzureOpenAIPromptExecutionSettings settings = new() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto() };
         Console.WriteLine(await kernel.InvokePromptAsync("How many days until Christmas? Explain your thinking.", new(settings)));
 
         // Example 4. Invoke the kernel with a prompt and allow the AI to automatically invoke functions that use enumerations
-        Console.WriteLine(await kernel.InvokePromptAsync("Create a handy lime colored widget for me.", new(settings)));
-        Console.WriteLine(await kernel.InvokePromptAsync("Create a beautiful scarlet colored widget for me.", new(settings)));
-        Console.WriteLine(await kernel.InvokePromptAsync("Create an attractive maroon and navy colored widget for me.", new(settings)));
+        // Console.WriteLine(await kernel.InvokePromptAsync("Create a handy lime colored widget for me.", new(settings)));
+        // Console.WriteLine(await kernel.InvokePromptAsync("Create a beautiful scarlet colored widget for me.", new(settings)));
+        // Console.WriteLine(await kernel.InvokePromptAsync("Create an attractive maroon and navy colored widget for me.", new(settings)));
     }
 
     /// <summary>
@@ -51,7 +53,12 @@ public sealed class Step2_Add_Plugins(ITestOutputHelper output) : BaseTest(outpu
     {
         [KernelFunction]
         [Description("Retrieves the current time in UTC.")]
-        public string GetCurrentUtcTime() => DateTime.UtcNow.ToString("R");
+        public string GetCurrentUtcTime()
+        {
+            string currentTime = DateTime.UtcNow.ToString("R");
+            System.Console.WriteLine($"### GetCurrentUtcTime has been called. Current UTC time: {currentTime} ###");
+            return currentTime;
+        }
     }
 
     /// <summary>

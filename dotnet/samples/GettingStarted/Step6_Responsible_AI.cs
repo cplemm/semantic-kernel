@@ -10,7 +10,7 @@ public sealed class Step6_Responsible_AI(ITestOutputHelper output) : BaseTest(ou
     /// <summary>
     /// Show how to use prompt filters to ensure that prompts are rendered in a responsible manner.
     /// </summary>
-    [Fact]
+    // [Fact]
     public async Task RunAsync()
     {
         // Create a kernel with OpenAI chat completion

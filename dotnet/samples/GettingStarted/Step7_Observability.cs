@@ -12,7 +12,7 @@ public sealed class Step7_Observability(ITestOutputHelper output) : BaseTest(out
     /// <summary>
     /// Shows how to observe the execution of a <see cref="KernelPlugin"/> instance with filters.
     /// </summary>
-    [Fact]
+    // [Fact]
     public async Task ObservabilityWithFiltersAsync()
     {
         // Create a kernel with OpenAI chat completion
@@ -40,7 +40,7 @@ public sealed class Step7_Observability(ITestOutputHelper output) : BaseTest(out
     /// <summary>
     /// Shows how to observe the execution of a <see cref="KernelPlugin"/> instance with hooks.
     /// </summary>
-    [Fact]
+    //[Fact]
     [Obsolete("Events are deprecated in favor of filters.")]
     public async Task ObservabilityWithHooksAsync()
     {

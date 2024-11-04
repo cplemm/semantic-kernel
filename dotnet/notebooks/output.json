@@ -1,0 +1,259 @@
+[
+    {
+        "Role": {
+            "Label": "user"
+        },
+        "Items": [
+            {
+                "$type": "TextContent",
+                "Text": "Tomorrow is Valentine\u0027s day. I need to come up with a few date ideas. My significant other likes poems so write them in the form of a poem."
+            }
+        ]
+    },
+    {
+        "Role": {
+            "Label": "Assistant"
+        },
+        "Items": [
+            {
+                "$type": "FunctionCallContent",
+                "Id": "call_RhNSbls9POqPi939CHqgzKL0",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "Brainstorm",
+                "Arguments": {
+                    "input": "Valentine\u0027s Day date ideas"
+                }
+            }
+        ],
+        "ModelId": "gpt-4o",
+        "Metadata": {
+            "Id": "chatcmpl-AMrgr6Fa01k0zeib8If2kEZjlHzmv",
+            "CreatedAt": "2024-10-27T07:09:25+00:00",
+            "SystemFingerprint": "fp_d54531d9eb",
+            "Usage": {
+                "OutputTokenCount": 22,
+                "InputTokenCount": 862,
+                "TotalTokenCount": 884,
+                "OutputTokenDetails": null
+            },
+            "Refusal": null,
+            "FinishReason": "ToolCalls",
+            "ContentTokenLogProbabilities": [],
+            "ChatResponseMessage.FunctionToolCalls": [
+                {
+                    "Kind": 0,
+                    "FunctionName": "WriterPlugin-Brainstorm",
+                    "FunctionArguments": {},
+                    "Id": "call_RhNSbls9POqPi939CHqgzKL0"
+                }
+            ]
+        }
+    },
+    {
+        "Role": {
+            "Label": "tool"
+        },
+        "Items": [
+            {
+                "$type": "TextContent",
+                "Text": "1. Romantic picnic in the park with a gourmet basket.\n2. Candlelit dinner at home with homemade dishes.\n3. Attend a wine tasting event together.\n4. Take a scenic hot air balloon ride.\n5. Enjoy a couple\u0027s spa day for relaxation.\n6. Go stargazing with a telescope and blanket.\n7. Visit an art gallery or museum followed by coffee.\n8. Take a cooking class together.\n9. Plan a weekend getaway to a cozy cabin.\n10. Go for a sunset hike with a beautiful view.  \n"
+            },
+            {
+                "$type": "FunctionResultContent",
+                "CallId": "call_RhNSbls9POqPi939CHqgzKL0",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "Brainstorm",
+                "Result": "1. Romantic picnic in the park with a gourmet basket.\n2. Candlelit dinner at home with homemade dishes.\n3. Attend a wine tasting event together.\n4. Take a scenic hot air balloon ride.\n5. Enjoy a couple\u0027s spa day for relaxation.\n6. Go stargazing with a telescope and blanket.\n7. Visit an art gallery or museum followed by coffee.\n8. Take a cooking class together.\n9. Plan a weekend getaway to a cozy cabin.\n10. Go for a sunset hike with a beautiful view.  \n"
+            }
+        ]
+    },
+    {
+        "Role": {
+            "Label": "Assistant"
+        },
+        "Items": [
+            {
+                "$type": "FunctionCallContent",
+                "Id": "call_xxxZstOSfUQ26xAqlL37wiQA",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Arguments": {
+                    "input": "Romantic picnic in the park with a gourmet basket."
+                }
+            },
+            {
+                "$type": "FunctionCallContent",
+                "Id": "call_LRo5LEwDrjXPel2rg3Uf9pl6",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Arguments": {
+                    "input": "Candlelit dinner at home with homemade dishes."
+                }
+            },
+            {
+                "$type": "FunctionCallContent",
+                "Id": "call_0IxH0xZ3NmoTAUv19PrEB4GO",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Arguments": {
+                    "input": "Attend a wine tasting event together."
+                }
+            },
+            {
+                "$type": "FunctionCallContent",
+                "Id": "call_ehEd33mG7FOf1FsjVIPD2cp2",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Arguments": {
+                    "input": "Take a scenic hot air balloon ride."
+                }
+            },
+            {
+                "$type": "FunctionCallContent",
+                "Id": "call_8Z0doAwYWuw2OXiriS6ZBZqD",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Arguments": {
+                    "input": "Enjoy a couple\u0027s spa day for relaxation."
+                }
+            }
+        ],
+        "ModelId": "gpt-4o",
+        "Metadata": {
+            "Id": "chatcmpl-AMrgtBSlMfd13Wx76zoxpn5quKFBR",
+            "CreatedAt": "2024-10-27T07:09:27+00:00",
+            "SystemFingerprint": "fp_d54531d9eb",
+            "Usage": {
+                "OutputTokenCount": 146,
+                "InputTokenCount": 1004,
+                "TotalTokenCount": 1150,
+                "OutputTokenDetails": null
+            },
+            "Refusal": null,
+            "FinishReason": "ToolCalls",
+            "ContentTokenLogProbabilities": [],
+            "ChatResponseMessage.FunctionToolCalls": [
+                {
+                    "Kind": 0,
+                    "FunctionName": "WriterPlugin-ShortPoem",
+                    "FunctionArguments": {},
+                    "Id": "call_xxxZstOSfUQ26xAqlL37wiQA"
+                },
+                {
+                    "Kind": 0,
+                    "FunctionName": "WriterPlugin-ShortPoem",
+                    "FunctionArguments": {},
+                    "Id": "call_LRo5LEwDrjXPel2rg3Uf9pl6"
+                },
+                {
+                    "Kind": 0,
+                    "FunctionName": "WriterPlugin-ShortPoem",
+                    "FunctionArguments": {},
+                    "Id": "call_0IxH0xZ3NmoTAUv19PrEB4GO"
+                },
+                {
+                    "Kind": 0,
+                    "FunctionName": "WriterPlugin-ShortPoem",
+                    "FunctionArguments": {},
+                    "Id": "call_ehEd33mG7FOf1FsjVIPD2cp2"
+                },
+                {
+                    "Kind": 0,
+                    "FunctionName": "WriterPlugin-ShortPoem",
+                    "FunctionArguments": {},
+                    "Id": "call_8Z0doAwYWuw2OXiriS6ZBZqD"
+                }
+            ]
+        }
+    },
+    {
+        "Role": {
+            "Label": "tool"
+        },
+        "Items": [
+            {
+                "$type": "TextContent",
+                "Text": "In the park with a basket so grand,  \nTwo lovers had everything planned.  \nBut ants joined the feast,  \nAnd wouldn\u0027t be ceased,  \nNow they\u0027re dining with nature\u0027s own band!  \n\nThe cheese was as fancy as gold,  \nThe wine, a story to be told.  \nBut"
+            },
+            {
+                "$type": "FunctionResultContent",
+                "CallId": "call_xxxZstOSfUQ26xAqlL37wiQA",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Result": "In the park with a basket so grand,  \nTwo lovers had everything planned.  \nBut ants joined the feast,  \nAnd wouldn\u0027t be ceased,  \nNow they\u0027re dining with nature\u0027s own band!  \n\nThe cheese was as fancy as gold,  \nThe wine, a story to be told.  \nBut"
+            }
+        ]
+    },
+    {
+        "Role": {
+            "Label": "tool"
+        },
+        "Items": [
+            {
+                "$type": "TextContent",
+                "Text": "In a kitchen, a chef with a plan,  \nCooked up dishes that barely began,  \nThe pasta was glue,  \nThe soup turned to stew,  \nBut the candlelight hid every flan!  \n\nWith a wink and a smile, they dined,  \nIgnoring the food that mal"
+            },
+            {
+                "$type": "FunctionResultContent",
+                "CallId": "call_LRo5LEwDrjXPel2rg3Uf9pl6",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Result": "In a kitchen, a chef with a plan,  \nCooked up dishes that barely began,  \nThe pasta was glue,  \nThe soup turned to stew,  \nBut the candlelight hid every flan!  \n\nWith a wink and a smile, they dined,  \nIgnoring the food that mal"
+            }
+        ]
+    },
+    {
+        "Role": {
+            "Label": "tool"
+        },
+        "Items": [
+            {
+                "$type": "TextContent",
+                "Text": "At a wine tasting event, we did meet,  \nWith glasses and cheese, quite the treat.  \nWe swirled and we sipped,  \nThen giggled and tripped,  \nAnd left with a grape-stained receipt! \uD83C\uDF77"
+            },
+            {
+                "$type": "FunctionResultContent",
+                "CallId": "call_0IxH0xZ3NmoTAUv19PrEB4GO",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Result": "At a wine tasting event, we did meet,  \nWith glasses and cheese, quite the treat.  \nWe swirled and we sipped,  \nThen giggled and tripped,  \nAnd left with a grape-stained receipt! \uD83C\uDF77"
+            }
+        ]
+    },
+    {
+        "Role": {
+            "Label": "tool"
+        },
+        "Items": [
+            {
+                "$type": "TextContent",
+                "Text": "In a basket up high we did float,  \nWith a pilot who once was a goat,  \nHe chewed on the map,  \nSaid, \u0022Oops, that\u0027s a wrap!\u0022  \nAnd we landed on someone\u0027s old boat!"
+            },
+            {
+                "$type": "FunctionResultContent",
+                "CallId": "call_ehEd33mG7FOf1FsjVIPD2cp2",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Result": "In a basket up high we did float,  \nWith a pilot who once was a goat,  \nHe chewed on the map,  \nSaid, \u0022Oops, that\u0027s a wrap!\u0022  \nAnd we landed on someone\u0027s old boat!"
+            }
+        ]
+    },
+    {
+        "Role": {
+            "Label": "tool"
+        },
+        "Items": [
+            {
+                "$type": "TextContent",
+                "Text": "In a spa where the candles were bright,  \nA couple sought pure delight.  \nWith cucumbers on eyes,  \nAnd mud on their thighs,  \nThey giggled at their spa day plight!  \n\nThe masseuse gave a gentle squeeze,  \nAs they both tried not to sneeze.  \n"
+            },
+            {
+                "$type": "FunctionResultContent",
+                "CallId": "call_8Z0doAwYWuw2OXiriS6ZBZqD",
+                "PluginName": "WriterPlugin",
+                "FunctionName": "ShortPoem",
+                "Result": "In a spa where the candles were bright,  \nA couple sought pure delight.  \nWith cucumbers on eyes,  \nAnd mud on their thighs,  \nThey giggled at their spa day plight!  \n\nThe masseuse gave a gentle squeeze,  \nAs they both tried not to sneeze.  \n"
+            }
+        ]
+    }
+]
